@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.facebook.com; font-src 'self'; connect-src 'self' https://www.facebook.com https://connect.facebook.net; media-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Política de privacidad · Vitalé</title>
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#0A0807">
 <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css">
 <link rel="stylesheet" href="cine.css">
 <link rel="stylesheet" href="vitale.css">
 </head>
@@ -24,7 +24,7 @@
 <main class="legal">
   <p class="slate"><i></i>Información legal</p>
   <h1>Política de privacidad</h1>
-<p><em>Última actualización: 6 de octubre de 2026</em></p>
+<p><em>Última actualización: 13 de octubre de 2026</em></p>
 
 <h2>1. Quién es el responsable</h2>
 <ul>
@@ -37,8 +37,10 @@
 <ul>
   <li><strong>Datos de identificación y contacto:</strong> nombre, apellidos, dirección de entrega, teléfono y email.</li>
   <li><strong>Datos del pedido:</strong> productos, importes, incidencias de entrega, devoluciones y garantías.</li>
-  <li><strong>Comunicaciones:</strong> los mensajes que nos envías por email, formulario, teléfono o WhatsApp.</li>
-  <li><strong>Datos de navegación:</strong> los que recogen las cookies, según lo que aceptes en el aviso de cookies.</li>
+  <li><strong>Comunicaciones:</strong> los mensajes que nos envías por email y las llamadas o mensajes de WhatsApp con los que confirmamos tu pedido.</li>
+  <li><strong>Datos técnicos de la visita:</strong> cuando abres esta web, el servicio que la aloja (GitHub Pages) recibe tu dirección IP y los datos técnicos de la petición (navegador, página pedida, fecha y hora), como cualquier servidor web. Nosotros no tenemos acceso a esos registros.</li>
+  <li><strong>Datos guardados en tu navegador:</strong> el contenido de tu carrito y tu elección sobre las cookies se guardan solo en tu dispositivo (almacenamiento local); no nos llegan hasta que haces el pedido.</li>
+  <li><strong>Datos de publicidad:</strong> solo si aceptas las cookies de publicidad, según se explica en la política de cookies.</li>
 </ul>
 <p>Si pagas con tarjeta, Apple Pay o Google Pay, los datos de pago los trata directamente la pasarela de pago de Shopify (Shopify Payments). Nosotros no vemos ni guardamos el número de tu tarjeta. Si pagas contra reembolso, no tratamos ningún dato de pago.</p>
 
@@ -58,14 +60,18 @@
 <p>Solo con quien lo necesita para prestar el servicio, siempre con contrato de encargo de tratamiento:</p>
 <ul>
   <li><strong>Shopify</strong> (Shopify International Limited, Irlanda): plataforma de la tienda y pasarela de pago con tarjeta (Shopify Payments).</li>
-  <li><strong>Nuestro proveedor logístico</strong> que se encarga del almacenaje y los envíos: prepara y envía los pedidos.</li>
+  <li><strong>CursosEcom</strong>, nuestro proveedor logístico: recibe los datos de entrega del pedido para almacenarlo, prepararlo y enviarlo.</li>
+  <li><strong>GitHub</strong> (GitHub, Inc., Estados Unidos): aloja esta web y recibe los datos técnicos de cada visita.</li>
+  <li><strong>Nuestro proveedor de correo electrónico</strong>, para recibir y responder tus emails.</li>
   <li><strong>Empresa de transporte</strong> que realiza la entrega: entrega el pedido y cobra el importe.</li>
-  <li><strong>Meta Platforms Ireland</strong> (WhatsApp y publicidad): si confirmamos el pedido por WhatsApp o si aceptas las cookies de publicidad.</li>
+  <li><strong>Meta Platforms Ireland</strong> (WhatsApp y publicidad): si confirmamos el pedido por WhatsApp o si aceptas las cookies de publicidad. Si aceptas las cookies de publicidad en el formulario de pedido de la tienda, Shopify envía a Meta la información de tu compra para medir nuestros anuncios.</li>
   <li><strong>Asesoría fiscal y contable</strong>, y administraciones públicas cuando la ley lo exija.</li>
 </ul>
 
+<p>Además, Shopify puede usar algunos datos de los pedidos para sus propios fines (por ejemplo, el servicio «Shopify Network Intelligence», que mejora sus productos y la publicidad), como responsable independiente y según su propia política de privacidad.</p>
+
 <h2>5. Transferencias internacionales</h2>
-<p>Algunos proveedores (Shopify, Meta) pueden tratar datos fuera del Espacio Económico Europeo, por ejemplo en Canadá o Estados Unidos. Lo hacen con garantías del RGPD: decisiones de adecuación de la Comisión Europea (incluido el Marco de Privacidad de Datos UE-EE. UU.) o cláusulas contractuales tipo.</p>
+<p>Algunos proveedores (Shopify, Meta, GitHub) pueden tratar datos fuera del Espacio Económico Europeo, por ejemplo en Canadá o Estados Unidos. Lo hacen con garantías del RGPD: decisiones de adecuación de la Comisión Europea (incluido el Marco de Privacidad de Datos UE-EE. UU.) o cláusulas contractuales tipo.</p>
 
 <h2>6. Cuánto tiempo los guardamos</h2>
 <p>Mientras dure la relación comercial y, después, durante los plazos legales: 6 años para la documentación mercantil (art. 30 del Código de Comercio) y los plazos de prescripción fiscales. Los datos para ofertas, hasta que te des de baja. Los datos de cookies, según la duración indicada en la política de cookies.</p>

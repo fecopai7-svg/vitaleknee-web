@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.facebook.com; font-src 'self'; connect-src 'self' https://www.facebook.com https://connect.facebook.net; media-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Política de cookies · Vitalé</title>
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#0A0807">
 <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css">
 <link rel="stylesheet" href="cine.css">
 <link rel="stylesheet" href="vitale.css">
 </head>
@@ -24,26 +24,36 @@
 <main class="legal">
   <p class="slate"><i></i>Información legal</p>
   <h1>Política de cookies</h1>
-<p><em>Última actualización: 6 de octubre de 2026</em></p>
+<p><em>Última actualización: 13 de octubre de 2026</em></p>
 
 <h2>1. Qué son las cookies</h2>
-<p>Son pequeños archivos que la web guarda en tu navegador para que funcione, para recordar tus preferencias o para medir y mejorar la publicidad.</p>
+<p>Son pequeños archivos que una web guarda en tu navegador para que funcione, para recordar tus preferencias o para medir la publicidad. Aquí incluimos también otras técnicas parecidas, como el almacenamiento local del navegador.</p>
 
-<h2>2. Qué cookies usamos</h2>
-<p><strong>En esta web solo se activan cookies de análisis o de publicidad si las aceptas en el aviso de cookies.</strong> Para recordar tu elección guardamos en tu navegador un dato técnico (<em>vk-consent</em>, sin caducidad hasta que lo borres). Las tipografías se cargan desde Google Fonts y Fontshare, que no instalan cookies.</p>
-<p>Si aceptas las cookies de publicidad, usaremos el píxel de Meta (cookie <em>_fbp</em>, 3 meses) para medir nuestros anuncios en Facebook e Instagram. Si las rechazas, no se carga.</p>
-<p>Cuando pulsas el botón de pedido pasas al formulario de pedido de nuestra tienda, que funciona con Shopify. Allí se usan estas cookies técnicas, necesarias para que el pedido funcione:</p>
+<h2>2. Qué usamos en esta web (www.vitaleknee.com)</h2>
+<p><strong>Las cookies de publicidad solo se activan si las aceptas en el aviso.</strong> Hasta que eliges, la web no carga nada de terceros: las tipografías y las imágenes se sirven desde nuestro propio dominio.</p>
+<table>
+  <tr><th>Nombre</th><th>Proveedor</th><th>Tipo</th><th>Finalidad</th><th>Duración</th></tr>
+  <tr><td>vk-consent</td><td>Vitalé (almacenamiento local)</td><td>Técnica</td><td>Recordar si aceptas o rechazas las cookies de publicidad</td><td>Hasta que la borres</td></tr>
+  <tr><td>vk-cart</td><td>Vitalé (almacenamiento local)</td><td>Técnica</td><td>Guardar los productos que añades al carrito</td><td>Hasta que la borres o vacíes el carrito</td></tr>
+  <tr><td>_fbp, _fbc</td><td>Meta (Facebook e Instagram)</td><td>Publicidad · solo si aceptas</td><td>Medir los resultados de nuestros anuncios y mostrarte publicidad</td><td>90 días</td></tr>
+</table>
+<p>Los datos de almacenamiento local se quedan en tu dispositivo y no se nos envían. Si aceptas la publicidad, el navegador carga el píxel de Meta desde connect.facebook.net y envía a Meta información de tu visita (páginas vistas y productos que añades al carrito).</p>
+
+<h2>3. Qué se usa en el formulario de pedido (tienda.vitaleknee.com)</h2>
+<p>Cuando pulsas «Comprar ya» o «Finalizar pedido» pasas al formulario de pedido de nuestra tienda, que funciona con Shopify y tiene su propio aviso de cookies. Allí se usan, entre otras, estas cookies técnicas necesarias para que el pedido funcione:</p>
 <table>
   <tr><th>Cookie</th><th>Proveedor</th><th>Tipo</th><th>Finalidad</th><th>Duración</th></tr>
   <tr><td>cart, cart_sig, cart_ts</td><td>Shopify</td><td>Técnica</td><td>Guardar el contenido del pedido</td><td>Hasta 2 semanas</td></tr>
   <tr><td>_secure_session_id, secure_customer_sig</td><td>Shopify</td><td>Técnica</td><td>Sesión y seguridad</td><td>Sesión / 1 año</td></tr>
   <tr><td>localization</td><td>Shopify</td><td>Técnica</td><td>Idioma y país</td><td>2 semanas</td></tr>
-  <tr><td>_tracking_consent</td><td>Shopify</td><td>Técnica</td><td>Recordar tus preferencias de cookies</td><td>1 año</td></tr>
+  <tr><td>_tracking_consent</td><td>Shopify</td><td>Técnica</td><td>Recordar tus preferencias de cookies en la tienda</td><td>1 año</td></tr>
 </table>
-<h2>3. Cómo aceptarlas, rechazarlas o cambiar de opinión</h2>
-<p>La primera vez que entras te mostramos un aviso con tres opciones: aceptar, rechazar o configurar por tipo. Puedes cambiar tu elección cuando quieras desde el enlace «Preferencias de cookies» del pie de página. También puedes borrarlas desde la configuración de tu navegador (Chrome, Safari, Firefox o Edge). Si bloqueas las cookies técnicas de la tienda, es posible que no puedas completar el pedido.</p>
+<p>Si en ese aviso aceptas las cookies de publicidad, Shopify envía a Meta la información de tu compra para medir nuestros anuncios.</p>
 
-<h2>4. Más información</h2>
+<h2>4. Cómo aceptarlas, rechazarlas o cambiar de opinión</h2>
+<p>A los pocos segundos de entrar te mostramos un aviso con dos botones del mismo tamaño, «Rechazar» y «Aceptar», y un enlace «Configurar». Puedes cambiar tu elección cuando quieras desde «Preferencias de cookies», en el pie de página: si retiras el consentimiento, borramos las cookies de Meta de esta web y la página se recarga sin el píxel. También puedes borrar las cookies y el almacenamiento local desde la configuración de tu navegador. Si bloqueas las cookies técnicas de la tienda, es posible que no puedas completar el pedido.</p>
+
+<h2>5. Más información</h2>
 <p>Para saber cómo tratamos tus datos, consulta la política de privacidad. Para cualquier duda, escríbenos a contact@vitaleknee.com.</p>
 
 </main>

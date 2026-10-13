@@ -18,7 +18,10 @@
   function load() {
     try {
       const c = JSON.parse(localStorage.getItem(KEY) || '{}');
-      return Object.fromEntries(Object.entries(c).filter(([id, q]) => PRODUCTS[id] && q > 0));
+      // storage is user-controlled: keep known variants and whole quantities 1–10 only
+      return Object.fromEntries(Object.entries(c)
+        .map(([id, q]) => [id, Math.min(10, Math.floor(Number(q)) || 0)])
+        .filter(([id, q]) => PRODUCTS[id] && q > 0));
     } catch (e) { return {}; }
   }
   let cart = load();
@@ -72,7 +75,7 @@
     drawer.addEventListener('click', (e) => {
       if (e.target.closest('[data-close]')) return close();
       const b = e.target.closest('[data-q]');
-      if (b) { const id = b.dataset.id; cart[id] = Math.max(0, (cart[id] || 0) + +b.dataset.q); if (!cart[id]) delete cart[id]; return save(); }
+      if (b) { const id = b.dataset.id; cart[id] = Math.min(10, Math.max(0, (cart[id] || 0) + +b.dataset.q)); if (!cart[id]) delete cart[id]; return save(); }
       const rm = e.target.closest('[data-rm]');
       if (rm) { delete cart[rm.dataset.rm]; save(); }
     });
@@ -96,6 +99,7 @@
     };
     requestAnimationFrame(step);
   }
+  if (form) form.addEventListener('submit', (e) => e.preventDefault());
   if (form) {
     form.addEventListener('change', () => {
       $$('[data-pack]', form).forEach((p) => {
@@ -117,7 +121,7 @@
   }));
   $$('[data-add]').forEach((b) => b.addEventListener('click', () => {
     const id = selected(), p = PRODUCTS[id];
-    cart[id] = (cart[id] || 0) + 1;
+    cart[id] = Math.min(10, (cart[id] || 0) + 1);
     save();
     track('AddToCart', { content_ids: [id], content_type: 'product', value: p.price, currency: 'EUR' });
     const cb = $('.cartbtn');
@@ -242,8 +246,9 @@
       rating.hidden = false;
     } else if (cfg.externalRating && cfg.externalRating.url) {
       const x = cfg.externalRating;
-      rating.innerHTML = `<span class="stars">${stars(x.value)}</span> <b>${num(x.value)}</b> · ${x.count.toLocaleString('es-ES')} valoraciones de este modelo en ${x.source}`;
-      rating.href = x.url; rating.target = '_blank'; rating.rel = 'noopener';
+      const safe = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+      rating.innerHTML = `<span class="stars">${stars(x.value)}</span> <b>${num(+x.value)}</b> · ${Number(x.count).toLocaleString('es-ES')} valoraciones de este modelo en ${safe(x.source)}`;
+      if (/^https:\/\//.test(x.url)) { rating.href = x.url; rating.target = '_blank'; rating.rel = 'noopener'; }
       rating.hidden = false;
     }
   }
