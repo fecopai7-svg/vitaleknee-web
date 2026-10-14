@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.facebook.com; font-src 'self'; connect-src 'self' https://www.facebook.com https://connect.facebook.net; media-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Masajeador de rodilla Vitalé · Calor y masaje · Pagas al recibir</title>
 <meta name="description" content="Masajeador de rodilla con calor por niveles, vibración suave y sin cables. 1 unidad 49,99 € · 2 unidades 79,99 €. Envío gratis 48 h y pagas al recibir.">
 <link rel="canonical" href="https://www.vitaleknee.com/producto">
@@ -30,10 +32,8 @@
   ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css">
 <link rel="preload" as="image" href="media/p1.jpg">
 <link rel="stylesheet" href="tienda.css">
 </head>
@@ -93,7 +93,7 @@
         <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 11v2M7 10v4M11 10v4"/></svg>Sin cables</span>
       </div>
 
-      <form id="packForm" onsubmit="return false">
+      <form id="packForm">
         <fieldset class="packs">
           <legend>Elige tu pack</legend>
           <label class="pack" data-pack>

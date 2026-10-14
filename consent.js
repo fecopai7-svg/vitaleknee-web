@@ -15,10 +15,22 @@
     } catch (e) { return null; }
   }
   function save(analytics, ads) {
+    const prev = read();
     const v = { v: VERSION, analytics: !!analytics, ads: !!ads, ts: new Date().toISOString() };
     try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {}
+    if (prev && prev.ads && !v.ads) return revoke();
     apply(v);
     return v;
+  }
+  // consent withdrawn: delete the Meta cookies on this domain and reload so the pixel is no longer on the page
+  function revoke() {
+    const host = location.hostname.replace(/^www./, '');
+    ['_fbp', '_fbc'].forEach((n) => {
+      ['', '; domain=.' + host, '; domain=' + location.hostname].forEach((d) => {
+        document.cookie = n + '=; Max-Age=0; path=/' + d;
+      });
+    });
+    location.reload();
   }
 
   function loadPixel() {
@@ -59,10 +71,9 @@
   const html = `
   <div class="vkck" role="region" aria-label="Aviso de cookies" hidden>
     <div class="vkck__in">
-      <p class="vkck__d">Usamos cookies técnicas para que el pedido funcione y, si nos dejas, otras para medir nuestros anuncios. <a href="cookies">Más información</a> · <button type="button" class="vkck__cfgl" data-ck-act="config">Configurar</button></p>
+      <p class="vkck__d">Usamos cookies técnicas para que el pedido funcione y, si nos dejas, otras de publicidad para medir nuestros anuncios. <a href="cookies">Más información</a> · <button type="button" class="vkck__cfgl" data-ck-act="config">Configurar</button></p>
       <div class="vkck__cfg" hidden>
         <label class="vkck__row"><span><b>Técnicas</b><small>Necesarias para que la web y el pedido funcionen.</small></span><input type="checkbox" checked disabled></label>
-        <label class="vkck__row"><span><b>Análisis</b><small>Saber cuántas personas visitan la web.</small></span><input type="checkbox" data-ck="analytics"></label>
         <label class="vkck__row"><span><b>Publicidad</b><small>Medir nuestros anuncios en Facebook e Instagram.</small></span><input type="checkbox" data-ck="ads"></label>
       </div>
       <div class="vkck__btns">
@@ -91,7 +102,7 @@
 
     function open(showConfig) {
       const cur = read();
-      chk('analytics').checked = !!(cur && cur.analytics);
+      
       chk('ads').checked = !!(cur && cur.ads);
       cfgBox.hidden = !showConfig; btnSave.hidden = !showConfig; btnCfg.hidden = !!showConfig;
       box.hidden = false;
@@ -106,10 +117,10 @@
     box.addEventListener('click', (e) => {
       const a = e.target.closest('[data-ck-act]'); if (!a) return;
       const act = a.dataset.ckAct;
-      if (act === 'accept') { save(true, true); close(); }
+      if (act === 'accept') { save(false, true); close(); }
       else if (act === 'reject') { save(false, false); close(); }
       else if (act === 'config') { open(true); }
-      else if (act === 'save') { save(chk('analytics').checked, chk('ads').checked); close(); }
+      else if (act === 'save') { save(false, chk('ads').checked); close(); }
     });
     // enlace «Preferencias de cookies» del pie
     document.addEventListener('click', (e) => {
