@@ -4,7 +4,7 @@ window.VITALE = {
   shop: 'https://tienda.vitaleknee.com',
   variants: {
     uno: '53766875283792',   // 1 unidad · 49,99 €
-    dos: '53771315872080'    // producto «Pack 2 unidades» (SKU PACK-41 del almacén) · 79,99 €
+    dos: '53771315872080'    // producto «Pack 2 unidades» (SKU PACK-41 del almacén) · 79,98 €
   },
   utm: 'utm_source=vitaleknee&utm_medium=web&utm_campaign=landing',
   // ID del píxel de Meta. Vacío = no se carga nada. Solo se activa si el visitante acepta las cookies de publicidad.
@@ -26,7 +26,7 @@ window.VITALE = {
   offerEnds: '2026-10-19T23:59:59+02:00',
   // Existencias REALES en Shopify (revisar al menos una vez por semana). Se muestran en el pack
   // solo cuando bajan de stockShowBelow; por encima no se enseña ningún aviso.
-  stock: { uno: 91, dos: 45 },
+  stock: { uno: 91, dos: 38 },
   stockShowBelow: 60,
   // Envío en el mismo día: ponlo a true SOLO si el almacén de verdad saca el mismo día los pedidos
   // hechos antes de cutoffHour (hora de Madrid). Con false no se muestra «sale hoy».
