@@ -94,7 +94,7 @@
   if (buy) buy.addEventListener('click', () => {
     // AddToCart en la web; InitiateCheckout y Purchase los envía la app de Meta desde el checkout de Shopify
     const r = $('input[name="pack"]:checked', form);
-    const value = r ? parseFloat(r.dataset.price.replace(/[^\d,]/g, '').replace(',', '.')) : 79.99;
+    const value = r ? parseFloat(r.dataset.price.replace(/[^\d,]/g, '').replace(',', '.')) : 79.98;
     if (window.fbq) window.fbq('track', 'AddToCart', { content_ids: [r ? r.value : cfg.variants.dos], content_type: 'product', value, currency: 'EUR' });
   });
 
