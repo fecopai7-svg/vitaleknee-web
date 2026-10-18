@@ -23,7 +23,7 @@ window.VITALE = {
   // Fin REAL de la rebaja (−10 €). La cuenta atrás de /producto apunta aquí y desaparece al llegar.
   // Ese día hay que volver a subir los precios en Shopify (59,99 € / 89,99 €) o fijar una nueva fecha real:
   // una cuenta atrás que se reinicia sola es una práctica engañosa prohibida.
-  offerEnds: '2026-10-19T23:59:59+02:00',
+  offerEnds: '2026-10-26T23:59:59+01:00',
   // Existencias REALES en Shopify (revisar al menos una vez por semana). Se muestran en el pack
   // solo cuando bajan de stockShowBelow; por encima no se enseña ningún aviso.
   stock: { uno: 91, dos: 38 },
