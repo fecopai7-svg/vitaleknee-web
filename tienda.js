@@ -11,7 +11,7 @@
 
   const PRODUCTS = {
     [cfg.variants.uno]: { title: 'Vitalé · 1 unidad', price: 49.99, was: 59.99, img: 'media/p1.jpg' },
-    [cfg.variants.dos]: { title: 'Vitalé · Pack 2 unidades', price: 79.98, was: 99.98, img: 'media/p6.jpg' }
+    [cfg.variants.dos]: { title: 'Vitalé · Pack 2 unidades', price: 79.98, was: 89.99, img: 'media/p6.jpg' }
   };
 
   // ---------- carrito ----------
